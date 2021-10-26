@@ -1,0 +1,13 @@
+version: '3'
+services:
+  echo:
+    build:
+      context: ../../
+      dockerfile: ./build/docker/echo/development/Dockerfile
+    image: go-echo-restful:latest
+    container_name: go-echo-restful
+    ports:
+      - "80:1323"
+    volumes:
+      - $PWD:/app
+    restart: always
