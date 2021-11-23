@@ -1,4 +1,4 @@
-package controllers
+package user
 
 import (
 	"github.com/labstack/echo/v4"
@@ -13,18 +13,18 @@ type (
 	}
 )
 
-func GetUsers(c echo.Context) error {
+func List(c echo.Context) error {
 	team := c.QueryParam("team")
 
 	return c.String(http.StatusOK, "team: "+team)
 }
 
-func GetUser(c echo.Context) error {
+func Retrieve(c echo.Context) error {
 	id := c.Param("id")
 	return c.String(http.StatusOK, id)
 }
 
-func CreateUser(c echo.Context) error {
+func Create(c echo.Context) error {
 	u := new(User)
 
 	if err := c.Bind(u); err != nil {

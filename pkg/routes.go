@@ -2,7 +2,7 @@ package pkg
 
 import (
 	"github.com/labstack/echo/v4"
-	"go-echo-restful/controllers"
+	"go-echo-restful/internal/user"
 	"net/http"
 )
 
@@ -13,8 +13,8 @@ func (ce *CustomEcho) UseRoute(e *echo.Echo) {
 	})
 
 	v1 := e.Group("v1")
-	v1.GET("/users", controllers.GetUsers)
-	v1.GET("/users/:id", controllers.GetUser)
-	v1.POST("/users", controllers.CreateUser)
+	v1.GET("/users", user.List)
+	v1.GET("/users/:id", user.Retrieve)
+	v1.POST("/users", user.Create)
 
 }
