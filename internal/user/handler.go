@@ -9,7 +9,8 @@ type (
 	User struct {
 		Name         string  `json:"name" form:"name"`
 		Description  *string `json:"descriptions" form:"description1" validate:"required""`
-		Description2 *string `json:"new" form:"description2" validate:"required"`
+		Description2 *string `json:"new" form:"description3" validate:"required"`
+		LongName     string  `json:"long_name" validate:"required"`
 	}
 )
 
