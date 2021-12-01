@@ -1,1 +1,5 @@
 ENV=Production
+DATABASE_HOST=postgres
+DATABASE_USER=go_echo
+DATABASE_PASSWORD=7Z>(;Ff39fngX:w;E_MQRbHDwX7Wz!_@
+DATABASE_NAME=go-echo

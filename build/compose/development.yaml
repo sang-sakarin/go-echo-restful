@@ -1,10 +1,14 @@
 version: '3'
+volumes:
+  go_echo_data: {}
 services:
   echo:
     build:
       context: ../../
       dockerfile: ./build/docker/echo/development/Dockerfile
     image: go-echo-restful:latest
+    depends_on:
+      - postgres
     container_name: go-echo-restful
     ports:
       - "80:1323"
@@ -12,4 +16,16 @@ services:
       - $PWD:/app
     env_file:
       - ../environment/development/echo
+    restart: always
+  postgres:
+    image: postgres:12-alpine
+    container_name: postgres
+    volumes:
+      - go_echo_data:/var/lib/postgres
+    env_file:
+      - ../environment/development/postgres
+    ports:
+      - "5432:5432"
+    command:
+      - "--logging_collector=off"
     restart: always

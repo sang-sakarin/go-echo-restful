@@ -1,0 +1,4 @@
+POSTGRES_DB=go-echo
+POSTGRES_USER=go_echo
+POSTGRES_PASSWORD=7Z>(;Ff39fngX:w;E_MQRbHDwX7Wz!_@
+PGDATA=/var/lib/postgresql/data/
