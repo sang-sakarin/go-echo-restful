@@ -3,13 +3,26 @@
 example folder structure
 
 ## How to run
+
+### development mode
 - Terminal: `docker-compose -f build/compose/development.yaml up`
 
-## Access
+### production mode
+- Terminal `docker-compose -f build/compose/production.yaml up`
+
+## Access point
 http://127.0.0.1/
 
-## TODO
-- [x] docker setup
+## Todo
+- [x] docker setup for develop & production
+- [x] route setup
+- [x] custom response
+- [x] multiple environment
+- [x] validator
+- [ ] database setup
 
 ## References
 - https://echo.labstack.com/guide/
+- https://www.golangprograms.com/naming-conventions-for-golang-functions.html
+- https://github.com/caarlos0/env
+- https://github.com/go-playground/validator
