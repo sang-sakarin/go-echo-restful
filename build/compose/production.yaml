@@ -8,4 +8,6 @@ services:
     container_name: go-echo-restful
     ports:
       - "80:1323"
+    env_file:
+      - ../environment/production/echo
     restart: always

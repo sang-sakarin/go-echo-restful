@@ -2,6 +2,7 @@ package user
 
 import (
 	"github.com/labstack/echo/v4"
+	"go-echo-restful/pkg/config"
 	"go-echo-restful/pkg/response"
 	"net/http"
 )
@@ -16,7 +17,7 @@ type (
 )
 
 func List(c echo.Context) error {
-	return c.JSON(http.StatusOK, response.Response{Success: true, Data: "OK"})
+	return c.JSON(http.StatusOK, response.Response{Success: true, Data: config.Cfg})
 }
 
 func Retrieve(c echo.Context) error {

@@ -10,4 +10,6 @@ services:
       - "80:1323"
     volumes:
       - $PWD:/app
+    env_file:
+      - ../environment/development/echo
     restart: always
