@@ -22,4 +22,6 @@ func (ce *CustomEcho) UseSetting(e *echo.Echo) {
 	ce.UseRoute(e)
 
 	database.UseDatabase()
+
+	database.UseMigration()
 }

@@ -19,7 +19,13 @@ http://127.0.0.1/
 - [x] custom response
 - [x] multiple environment
 - [x] validator
-- [ ] database setup
+- [x] database setup
+- [x] migration database
+- [x] soft delete
+- [ ] crud api
+- [ ] register
+- [ ] auth
+- [ ] jwt
 
 ## References
 - https://echo.labstack.com/guide/
