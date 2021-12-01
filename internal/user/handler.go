@@ -2,27 +2,26 @@ package user
 
 import (
 	"github.com/labstack/echo/v4"
+	"go-echo-restful/pkg/response"
 	"net/http"
 )
 
 type (
 	User struct {
 		Name         string  `json:"name" form:"name"`
-		Description  *string `json:"descriptions" form:"description1" validate:"required""`
+		Description  *string `json:"descriptions" form:"description1" validate:"required"`
 		Description2 *string `json:"new" form:"description3" validate:"required"`
 		LongName     string  `json:"long_name" validate:"required"`
 	}
 )
 
 func List(c echo.Context) error {
-	team := c.QueryParam("team")
-
-	return c.String(http.StatusOK, "team: "+team)
+	return c.JSON(http.StatusOK, response.Response{Success: true, Data: "OK"})
 }
 
 func Retrieve(c echo.Context) error {
 	id := c.Param("id")
-	return c.String(http.StatusOK, id)
+	return c.JSON(http.StatusOK, response.Response{Success: true, Data: id})
 }
 
 func Create(c echo.Context) error {
@@ -36,5 +35,5 @@ func Create(c echo.Context) error {
 		return err
 	}
 
-	return c.JSON(http.StatusCreated, u)
+	return c.JSON(http.StatusCreated, response.Response{Success: true, Data: u})
 }
