@@ -22,6 +22,7 @@ http://127.0.0.1/
 - [x] database setup
 - [x] migration database
 - [x] soft delete
+- [ ] swagger
 - [ ] crud api
 - [ ] register
 - [ ] auth

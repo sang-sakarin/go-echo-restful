@@ -1,0 +1,56 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "contact": {}
+    },
+    "paths": {
+        "/v1/news": {
+            "post": {
+                "description": "List news",
+                "tags": [
+                    "News"
+                ],
+                "parameters": [
+                    {
+                        "description": "abc",
+                        "name": "title",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/news.SerializerForm"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Test",
+                        "schema": {
+                            "$ref": "#/definitions/news.SerializerForm"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "news.SerializerForm": {
+            "type": "object",
+            "required": [
+                "description",
+                "is_publish",
+                "title"
+            ],
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "is_publish": {
+                    "type": "boolean"
+                },
+                "title": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

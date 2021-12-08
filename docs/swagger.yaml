@@ -1,0 +1,35 @@
+definitions:
+  news.SerializerForm:
+    properties:
+      description:
+        type: string
+      is_publish:
+        type: boolean
+      title:
+        type: string
+    required:
+    - description
+    - is_publish
+    - title
+    type: object
+info:
+  contact: {}
+paths:
+  /v1/news:
+    post:
+      description: List news
+      parameters:
+      - description: abc
+        in: body
+        name: title
+        required: true
+        schema:
+          $ref: '#/definitions/news.SerializerForm'
+      responses:
+        "200":
+          description: Test
+          schema:
+            $ref: '#/definitions/news.SerializerForm'
+      tags:
+      - News
+swagger: "2.0"

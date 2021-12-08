@@ -19,9 +19,11 @@ func (ce *CustomEcho) UseSetting(e *echo.Echo) {
 
 	e.Static("/static", "static")
 
+	//e.GET("/docs/*", echoSwagger.WrapHandler)
+
 	ce.UseRoute(e)
 
 	database.UseDatabase()
 
-	database.UseMigration()
+	UseMigration()
 }
